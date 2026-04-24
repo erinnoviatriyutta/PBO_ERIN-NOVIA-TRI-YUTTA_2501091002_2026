@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package erin07042026;
+package erin09042026;
 
 /**
  *
@@ -16,11 +16,40 @@ public class StudentRecord {
     private double mathGrade; 
     private double englishGrade; 
     private double scienceGrade; 
-    private double average;
+    private double average; 
+    public String jenisKelamin;
     
     private static int studentCount;
     
-    public String getname(){
+    public StudentRecord() {
+         this("Ani", "Padang");
+        studentCount++;
+    }
+
+    public StudentRecord(String temp) {
+        this.name = temp;
+         studentCount++;
+    }
+
+    public StudentRecord(String name, String address) {
+        this.name = name;
+        this.address = address;
+          studentCount++;    
+    }
+    
+    public StudentRecord(String name, String address, int age) {
+        this.name = name;
+        this.address = address;
+        this.age = age;
+    }
+
+    public StudentRecord(double mGrade, double eGrade, double sGrade) {
+        mathGrade = mGrade;
+        englishGrade = eGrade;
+        scienceGrade = sGrade;
+    }
+
+    public String getName(){
         return name;
     }
     
@@ -29,63 +58,74 @@ public class StudentRecord {
         
     }
 
-    public String getaddress(){
+    public String getAddress(){
         return address;
     }
     
-    public void setaddress(String address){
+    public void setAddress(String address){
         this.address = address;
         
     }
     
-    public int getage(){
+    public int getAge(){
         return age;
     }
     
-    public void setage(int age){
+    public void setAge(int age){
         this.age = age;
         
     }
-    
-     public double getmathGrade(){
+   
+        
+     public double getMathGrade(){
         return mathGrade;
     }
     
-    public void setmathGrade(double mathGrade){
+    public void setMathGrade(double mathGrade){
         this.mathGrade = mathGrade;
         
     }
     
-    public double getenglishGrade(){
+    public double getEnglishGrade(){
         return englishGrade;
     }
     
-    public void setenglishGrade(double englishGrade){
+    public void setEnglishGrade(double englishGrade){
         this.englishGrade = englishGrade;
         
     }
     
-    public double getscienceGrade(){
+    public double getScienceGrade(){
         return scienceGrade;
     }
     
-    public void setscienceGrade(double scienceGrade){
+    public void setScienceGrade(double scienceGrade){
         this.scienceGrade = scienceGrade;
         
     }
     
-    public double getaverage(){
+    public double getAverage(){
         average = (mathGrade + englishGrade + scienceGrade)/3;
         return average;
     }
     
-    public void setaverage(double average){
-        this.average = average;
+    public static int getStudentCount(){
+        return studentCount;
         
     }
     
+    public void print( String temp ){ 
+        System.out.println("Name        :" + name); 
+        System.out.println("Address     :" + address);  
+        System.out.println("Age         :" + age);  
+    } 
     
-}
-    
+    public void print(double eGrade, double mGrade, double sGrade) {
+        System.out.println("Name:" + name); 
+        System.out.println("Math Grade:" + mGrade);  
+        System.out.println("English Grade:" + eGrade);  
+        System.out.println("Science Grade:" + sGrade);  
+    }
 
-    
+} 
+
